@@ -32,6 +32,13 @@ $ git clone https://github.com/antkahn/flask-api-starter-kit.git <my-project-nam
 $ cd <my-project-name>
 ```
 
+Always work on a virtual env, in our case here you can create and activate it
+
+```python
+python3.7 -m venv env
+source env/bin/activate
+```
+
 Then install dependencies and check that it works
 
 ```bash
