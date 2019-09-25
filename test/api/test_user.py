@@ -36,3 +36,20 @@ class TestUser(unittest.TestCase):
                 'last_name': 'Doe'
             },
         ])
+    
+    def test_post(self):
+        pass
+        # response = self.client.post(
+        #     '/application/user',
+        #     content_type='application/json'
+        # )
+
+        # self.assertEqual(resopnse_json, [
+
+        # ])
+
+    def test_put(self):
+        pass
+
+    def test_delete(self):
+        pass
