@@ -4,7 +4,7 @@ This starter kit is designed to allow you to create very fast your Flask API.
 
 The primary goal of this project is to remain as **unopinionated** as possible. Its purpose is not to dictate your project structure or to demonstrate a complete sample application, but to provide a set of tools intended to make back-end development robust, easy, and, most importantly, fun.
 
-This starter kit comes with a [tutorial](https://github.com/antkahn/flask-api-starter-kit/blob/tutorial/doc/installation.md).
+This starter kit comes with a [tutorial](https://github.com/FernandoZnga/flask-api-setup/blob/master/doc/installation.md).
 Check it out if you want a quick tutorial on how to use Flask with this architecure.
 
 ## Table of Contents
@@ -28,7 +28,7 @@ You will need [docker](https://docs.docker.com/engine/installation/) and [docker
 First, clone the project:
 
 ```bash
-$ git clone https://github.com/antkahn/flask-api-starter-kit.git <my-project-name>
+$ git clone https://github.com/FernandoZnga/flask-api-setup.git <my-project-name>
 $ cd <my-project-name>
 ```
 
@@ -41,7 +41,7 @@ $ make start        # Run the container containing your local python server
 
 If everything works, you should see the available routes [here](http://127.0.0.1:3000/application/spec).
 
-The API runs locally on docker containers. You can easily change the python version you are willing to use [here](https://github.com/antkahn/flask-api-starter-kit/blob/master/docker-compose.yml#L4), by fetching a docker image of the python version you want.
+The API runs locally on docker containers. You can easily change the python version you are willing to use [here](https://github.com/FernandoZnga/flask-api-setup/blob/master/docker-compose.yml#L4), by fetching a docker image of the python version you want.
 
 ## Commands
 
@@ -69,8 +69,6 @@ Locally, you can connect to your database using :
 ```bash
 $ make db/connect
 ```
-
-However, you will need before using this command to change the docker database container's name [here](https://github.com/antkahn/flask-api-starter-kit/blob/master/package.json#L6).
 
 This kit contains a built in database versioning using [alembic](https://pypi.python.org/pypi/alembic).
 Once you've changed your models, which should reflect your database's state, you can generate the migration, then upgrade or downgrade your database as you want. See [Commands](#commands) for more information.
