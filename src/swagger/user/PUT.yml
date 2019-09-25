@@ -1,0 +1,28 @@
+Update an user based on the sent information
+---
+tags:
+  - user
+parameters:
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        last_name:
+          type: string
+          description: The last name of the user
+        first_name:
+          type: string
+          description: The first name of the user
+        age:
+          type: integer
+          description: The age of the user
+responses:
+  200:
+    description: The user was successfully updated
+    schema:
+      example:
+        user:
+          last_name: Doe
+          first_name: John
+          age: 30

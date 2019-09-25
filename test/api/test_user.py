@@ -14,7 +14,7 @@ class TestUser(unittest.TestCase):
 
     def setUp(self):
         db.create_all()
-        User('John', 'Doe', 25).save()
+        User('Jimmy', 'Fallon', 99).save()
 
     def tearDown(self):
         db.session.remove()
@@ -31,8 +31,58 @@ class TestUser(unittest.TestCase):
         response_json = json.loads(response.data.decode('utf-8'))
         self.assertEqual(response_json, [
             {
-                'age': 25,
-                'first_name': 'John',
-                'last_name': 'Doe'
+                'age': 99,
+                'first_name': 'Jimmy',
+                'last_name': 'Fallon'
+            },
+        ])
+    
+    def test_post(self):
+        response = self.client.post(
+            '/application/user',
+            content_type='application/json'
+        )
+
+        self.assertEqual(response.status_code, 200)
+
+        response_json = json.loads(response.data.decode('utf-8'))
+        self.assertEqual(response_json, [
+            {
+                'age': 99,
+                'first_name': 'Jimmy',
+                'last_name': 'Fallon'
+            },
+        ])
+
+    def test_put(self):
+        response = self.client.put(
+            '/application/user',
+            content_type='application/json'
+        )
+
+        self.assertEqual(response.status_code, 200)
+
+        response_json = json.loads(response.data.decode('utf-8'))
+        self.assertEqual(response_json, [
+            {
+                'age': 99,
+                'first_name': 'Jimmy',
+                'last_name': 'Fallon'
+            },
+        ])
+
+    def test_delete(self):
+        response = self.client.delete(
+            '/application/user',
+            content_type='application/json'
+        )
+
+        self.assertEqual(response.status_code, 200)
+
+        response_json = json.loads(response.data.decode('utf-8'))
+        self.assertEqual(response_json, [
+            {
+                'first_name': 'Jimmy',
+                'last_name': 'Fallon'
             },
         ])
