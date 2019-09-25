@@ -4,8 +4,16 @@ Let's begin this tutorial. You will start with cloning the repository on your lo
 
 ```
 git clone git@github.com:antkahn/flask-api-starter-kit.git && cd flask-api-starter-kit
-git co tutorial
+git checkout start-from-here-tutorial
 ```
+
+Then, let's create a virtual environment and activate it
+
+```python
+python3.7 -m venv env
+source env/bin/activate
+```
+Remember, if you are gonna install extra libraries or packages, start your virtual env before it.
 
 Install [docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/) if you don't already have them.
 
