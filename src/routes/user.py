@@ -6,12 +6,8 @@ from flask_restful import Api
 
 from resources import UserResource
 
+USER_BLUEPRINT = Blueprint('user', __name__)
 
-USER_BLUEPRINT = Blueprint("user", __name__)
-Api(USER_BLUEPRINT).add_resource(UserResource, "/user/<string:last_name>/<string:first_name>")
+## Routes ##
 
-ADD_BLUEPRINT = Blueprint("add", __name__)
-Api(ADD_BLUEPRINT).add_resource(UserResource, "/add/<string:last_name>/<string:first_name>/<int:age>")
-
-UPDATE_BLUEPRINT = Blueprint("update", __name__)
-Api(UPDATE_BLUEPRINT).add_resource(UserResource, "/update/<string:last_name>/<string:first_name>")
+Api(USER_BLUEPRINT).add_resource(UserResource, '/user')
