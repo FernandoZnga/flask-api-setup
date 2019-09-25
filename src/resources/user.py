@@ -35,9 +35,8 @@ class UserResource(Resource):
         last_name = json_data.get("last_name")
         first_name = json_data.get("first_name")
         age = json_data.get("age")
-        
-        user = UserRepository.create(
-            last_name, first_name, age)
+
+        user = UserRepository.create(last_name, first_name, age)
         return jsonify({"create_user": user.json})
 
 
@@ -52,9 +51,8 @@ class UserResource(Resource):
         last_name = json_data.get("last_name")
         first_name = json_data.get("first_name")
         age = json_data.get("age")
-        
-        user = UserRepository.update(
-            last_name, first_name, age)
+
+        user = UserRepository.update(last_name, first_name, age)
         return jsonify({"update_user": user.json})
 
 
@@ -69,6 +67,9 @@ class UserResource(Resource):
         last_name = json_data.get("last_name")
         first_name = json_data.get("first_name")
         
-        user = UserRepository.delete(
-            last_name, first_name)
-        return jsonify({"delete_user": user.json})
+        search_user = UserRepository.get_one(last_name=last_name, first_name=first_name)
+        if search_user is None:
+            pass
+        else:
+            user = UserRepository.delete(last_name, first_name)
+            return jsonify({"delete_user": user.json})

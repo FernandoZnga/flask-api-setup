@@ -40,7 +40,13 @@ class TestUser(unittest.TestCase):
     def test_post(self):
         response = self.client.post(
             '/application/user',
-            content_type='application/json'
+            content_type='application/json',
+            to_json=
+            {
+                "first_name": "Jimmy-test",
+                "last_name": "Fallon-test",
+                "age": 999
+            }
         )
 
         self.assertEqual(response.status_code, 200)
@@ -48,9 +54,9 @@ class TestUser(unittest.TestCase):
         response_json = json.loads(response.data.decode('utf-8'))
         self.assertEqual(response_json, [
             {
-                'age': 99,
-                'first_name': 'Jimmy',
-                'last_name': 'Fallon'
+                'age': 999,
+                'first_name': 'Jimmy-test',
+                'last_name': 'Fallon-test'
             },
         ])
 
