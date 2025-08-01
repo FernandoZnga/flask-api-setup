@@ -3,7 +3,7 @@
 Let's begin this tutorial. You will start with cloning the repository on your local machine.
 
 ```
-git clone git@github.com:antkahn/flask-api-starter-kit.git && cd flask-api-starter-kit
+git clone git@github.com:FernandoZnga/flask-api-starter-kit.git && cd flask-api-starter-kit
 git co tutorial
 ```
 
